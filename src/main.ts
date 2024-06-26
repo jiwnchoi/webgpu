@@ -1,3 +1,3 @@
-import main from "./4. Storage Buffers";
+import main from "./5. Vertex Buffers";
 
 main();
