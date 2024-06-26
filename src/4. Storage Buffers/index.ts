@@ -1,13 +1,6 @@
-import redTriangle from "./colors.wgsl?raw";
+import redTriangle from "./index.wgsl?raw";
 
 const rand = (min = 0, max = min || 1) => min + Math.random() * (max - min);
-
-interface ObjectInfo {
-	scale: number;
-	bindGroup: GPUBindGroup;
-	uniformBuffer: GPUBuffer;
-	uniformValues: Float32Array;
-}
 
 async function main() {
 	const adapter = await navigator.gpu?.requestAdapter();
@@ -74,7 +67,7 @@ async function main() {
 	const kScaleOffset = 0;
 
 	const kNumObjects = 10;
-	const objectInfos: ObjectInfo[] = [];
+	const objectInfos = [];
 
 	for (let i = 0; i < kNumObjects; i++) {
 		const staticUniformBuffer = device.createBuffer({
