@@ -1,4 +1,4 @@
-import redTriangle from "./red-triangle.wgsl?raw";
+import redTriangle from "./colors.wgsl?raw";
 
 async function main() {
 	const adapter = await navigator.gpu?.requestAdapter();
